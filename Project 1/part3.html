@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--
+    Author: Gabriel Andrade de Souza
+    Date: 31-01-2016
+    Assessment 1 - HTML & CSS
+    File: part3.html
+-->
+
+<html>
+    <head>
+        <title>Dating Web Site</title>
+        
+        <meta charset="utf-8">
+        <meta name="author" content="Gabriel Andrade de Souza">
+        <meta name="description" content="Dating Web Site">
+        <meta name="keywords" content="Dating, date, love, couple">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <style>
+            fieldset
+            {
+                background-color: lightyellow;
+                border: 10px solid yellow;
+                margin-bottom: 10px;
+                width: 720px;
+            }
+            
+            label
+            {
+                width: 180px;
+                display: inline-block;
+                text-align: right;
+                vertical-align: top;
+            }
+            
+            #gender, #contact
+            {
+                width: auto;
+            }
+            
+            /* Configuration of text of range bars */
+            #short
+            {
+                text-align: center;
+                vertical-align: top;
+                background-color: brown;
+                color: white;
+                padding: 4px;
+                margin: 8px;
+            }
+            
+            #poor
+            {
+                text-align: center;
+                vertical-align: top;
+                background-color: brown;
+                color: white;
+                padding: 4px;
+                margin: 10px;
+            }
+            
+            #tall
+            {
+                text-align: center;
+                vertical-align: top;
+                background-color: blueviolet;
+                color: white;
+                padding: 4px;
+                margin: 6px;
+            }
+            
+            #rich
+            {
+                text-align: center;
+                vertical-align: top;
+                background-color: blueviolet;
+                color: white;
+                padding: 4px;
+                margin: 4px;
+            }
+            /* END - Configuration of text of range bars */
+            
+            textarea
+            {
+                width: 360px;
+                height: 50px;
+            }
+            
+            label:hover
+            {
+                font-size: 25px;
+            }
+            
+            input:hover
+            {
+                font-size: 25px;
+            }
+            
+            select:hover    /* This is not a requirement, but is shown in the video of the professor */
+            {
+                font-size: 25px;
+            }
+            
+        </style>
+    </head>
+   
+    <body>
+        <h1>Please Enter Your Details For Our Dating Website!</h1>
+ 
+        <form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post" enctype="multipart/form-data"> <!-- Where the data will be sent to -->
+            <fieldset>
+                <legend>Your Face</legend>
+
+                <label for="avatar">Your Image: </label>
+                <input type="file" id="avatar" name="avatar" required>
+                <br>
+                <label for="preview">Image Preview:</label> 
+                <img id="preview" name="preview">
+            </fieldset>
+
+            <fieldset>
+                <legend>Your General Details</legend>
+
+                <label for="name">Name:</label> 
+                <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                <br>
+                <label for="gender">Gender:</label> 
+                <input type="radio" id="gender" name="gender" required>Male 
+                <input type="radio" id="gender" name="gender" required>Female
+                <br>
+                <label for="age">Age:</label> 
+                <input type="number" id="age" name="age" required>
+                <br>
+                <label for="dateOfBirth">Date Of Birth:</label> 
+                <input type="date" id="dateOfBirth" name="dateOfBirth">
+                <br>
+                <label for="color">Favorite Color:</label> 
+                <input type="color" id="color" name="color">
+                <br>
+                <label for="cities">Which Country:</label>
+                <select name="cities" id="cities">
+                    <option value="noSelection">No Selection</option>
+                    <option value="br">Brazil</option>
+                    <option value="cr">Croatia</option>
+                    <option value="hk">Hong Kong</option>
+                    <option value="tk">Turkey</option>
+                    <option value="uk">United Kingdom</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Your Indicators</legend>
+
+                <label for="height">Height:</label> 
+                <span id="short"> Short </span> <input type="range" min="0" max="100" step="5" value="50" id="height" name="height"> <span id="tall">Tall</span>
+                <br>
+                <label for="salary">Salary:</label> 
+                <span id="poor"> Poor </span> <input type="range" min="0" max="100" step="5" value="50" id="salary" name="salary"> <span id="rich">Rich</span>
+            </fieldset>
+
+            <fieldset>
+                <legend>Your Contact Information</legend>
+
+                <label for="email">Email:</label> 
+                <input type="email" id="email" name="email" required>
+                <br>
+                <br>
+                <label for="tel">Mobile:</label> 
+                <input type="tel" id="tel" name="tel">
+                <br>
+                <br>
+                <label for="address">Address:</label> 
+                <textarea id="address" name="address"></textarea>
+                <br>
+                <br>
+                <label for="contact">Method To Contact You:</label>
+                <input type="checkbox" id="contact" name="contactEmail">Email
+                <input type="checkbox" id="contact" name="contactWhatsapp">Whatsapp
+                <input type="checkbox" id="contact" name="contactChat">In-app chat
+            </fieldset>
+            <input type="submit" value="Submit">
+        </form>
+        <script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+    </body>
+</html>
